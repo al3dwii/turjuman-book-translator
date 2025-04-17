@@ -4,14 +4,29 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "turjuman-book-translator"
-version = "0.0.2"
+version = "0.0.3"
 requires-python = ">=3.8"
 dependencies = []
 
-# Tell setuptools that *anything* under src/ is importable
-[tool.setuptools.package-dir]
-"" = "src"
+# ──────────────── NEW ────────────────
+[tool.setuptools]
+package-dir = {"" = "src"}          # root of the imports is src/
 
-[tool.setuptools.packages.find]
-where = ["src"]          # look inside src/
-include = ["*"]          # include every module/package it finds
+# There are no packages (folders with __init__.py)
+packages = []                       # keep empty
+
+# Tell setuptools to include these stand‑alone modules
+py-modules = [
+  "translator",
+  "nodes",
+  "nodes_preprocessing",
+  "nodes_translation",
+  "nodes_postprocessing",
+  "node_workers",
+  "chunking",
+  "utils",
+  "state",
+  "providers",
+  "exceptions"
+]
+# ─────────────────────────────────────
