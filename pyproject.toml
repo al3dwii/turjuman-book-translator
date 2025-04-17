@@ -1,0 +1,13 @@
+[project]
+name = "turjuman-book-translator"   # must match import name
+version = "0.0.0"
+description = "Book translator based on Turjuman LangGraph"
+dependencies = []                   # leave blank; user supplies LLM libs
+requires-python = ">=3.9"
+
+[project.urls]
+Homepage = "https://github.com/<you>/turjuman-book-translator"
+
+# Tell build tools to treat everything in src/ as importable
+[tool.setuptools.packages.find]
+where = ["src"]
