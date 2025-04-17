@@ -4,12 +4,14 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "turjuman-book-translator"
-version = "0.0.1"
-description = "Book translator based on Turjuman LangGraph"
+version = "0.0.2"
 requires-python = ">=3.8"
 dependencies = []
 
+# Tell setuptools that *anything* under src/ is importable
+[tool.setuptools.package-dir]
+"" = "src"
+
 [tool.setuptools.packages.find]
-# look in the repo root (“.”) and include turjuman + subpackages
-where = ["."]
-include = ["turjuman*"]
+where = ["src"]          # look inside src/
+include = ["*"]          # include every module/package it finds
