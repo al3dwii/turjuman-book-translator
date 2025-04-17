@@ -1,13 +1,15 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
 [project]
-name = "turjuman-book-translator"   # must match import name
-version = "0.0.0"
+name = "turjuman-book-translator"
+version = "0.0.1"
 description = "Book translator based on Turjuman LangGraph"
-dependencies = []                   # leave blank; user supplies LLM libs
-requires-python = ">=3.9"
+requires-python = ">=3.8"
+dependencies = []
 
-[project.urls]
-Homepage = "https://github.com/<you>/turjuman-book-translator"
-
-# Tell build tools to treat everything in src/ as importable
 [tool.setuptools.packages.find]
-where = ["src"]
+# look in the repo root (“.”) and include turjuman + subpackages
+where = ["."]
+include = ["turjuman*"]
