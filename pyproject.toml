@@ -4,18 +4,18 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "turjuman-book-translator"
-version = "0.0.3"
+version = "0.0.3"              # bump so Poetry re‑installs
 requires-python = ">=3.8"
 dependencies = []
 
-# ──────────────── NEW ────────────────
 [tool.setuptools]
-package-dir = {"" = "src"}          # root of the imports is src/
+# treat *src/* as the project root …
+package-dir = {"" = "src"}
 
-# There are no packages (folders with __init__.py)
-packages = []                       # keep empty
+# … there are NO real packages (folders with __init__.py we want)
+packages = []
 
-# Tell setuptools to include these stand‑alone modules
+# explicitly include the stand‑alone modules that live in src/
 py-modules = [
   "translator",
   "nodes",
@@ -29,4 +29,3 @@ py-modules = [
   "providers",
   "exceptions"
 ]
-# ─────────────────────────────────────
